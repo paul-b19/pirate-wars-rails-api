@@ -13,12 +13,19 @@ Leader.delete_all
 
 puts 'Seeding leaders data'
 
-10.times do
+avatars = [
+    'pirate', 'camouflaged', 'birg', 'cyborg', 
+    'geisha', 'ghost', 'hunter', 'ninja',
+    'samurai', 'vamp', 'viking', 'warrior'
+  ]
+
+15.times do
   Leader.create(
     name: Faker::Name.unique.name,
     wins: rand(0..50),
     losses: rand(0..50),
-    accuracy: rand(0..100)
+    accuracy: rand(0..100),
+    avatar: avatars.sample
   )
 end
 
